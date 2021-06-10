@@ -1,0 +1,38 @@
+{
+    "name": "client",
+    "version": "1.0.0",
+    "description": "",
+    "main": "server.js",
+    "scripts": {
+        "test": "test",
+        "build": "cd client && npm run build",
+        "client": "cd client && npm run start",
+        "deploy": "gh-pages -d build",
+        "heroku-postbuild": "npm run build",
+        "install": "cd client && npm install",
+        "predeploy": "npm run build",
+        "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+        "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+        "start:prod": "node server.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Ellisd16/Animation_Portfolio.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Ellisd16/Animation_Portfolio/issues"
+    },
+    "homepage": "https://github.com/Ellisd16/Animation_Portfolio",
+    "dependencies": {
+        "@material-ui/icons": "^4.11.2",
+        "axios": "^0.21.1",
+        "dotenv": "^8.2.0",
+        "express": "^4.17.1",
+        "if-env": "^1.0.4"
+    },
+    "devDependencies": {
+        "concurrently": "^6.0.2"
+    }
+}
